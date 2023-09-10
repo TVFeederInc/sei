@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Image Buttons</title>
+    <style>
+	body{display:inline;}
+        .image-button{width:33.333333%;height:33.333333%;cursor:pointer;margin:3.703703% 0% 0% 11.111111%;}
+    </style>
+</head>
+<body>
+	<a>
+		<img src="C:\Users\Jason\Downloads\MovieMagic\sad.png" alt="Button 1" class="image-button" onclick="sad()">
+	</a>
+	<a>
+        	<img src="C:\Users\Jason\Downloads\MovieMagic\happy.png" alt="Button 2" class="image-button" onclick="happy()">
+	</a>
+	<button id="connectWalletButton">Connect Wallet</button>
+</body>
+<script src="https://cdn.jsdelivr.net/npm/web3@1.5.3/dist/web3.min.js"></script>
+<script>
+if (typeof web3 !== 'undefined') {
+    web3 = new Web3(web3.currentProvider);
+} else {
+    // Handle the case where the user doesn't have a wallet extension installed
+    alert('Please install a blockchain wallet extension like MetaMask.');
+}
+const connectWalletButton = document.getElementById('connectWalletButton');
+
+connectWalletButton.addEventListener('click', async () => {
+    try {
+        // Request permission to access the user's wallet
+        const accounts = await web3.eth.requestAccounts();
+
+        // The user's wallet address is now available in the 'accounts' array
+        const userAddress = accounts[0];
+
+        alert('Connected to wallet. Your address is: ' + userAddress);
+    } catch (error) {
+        console.error(error);
+        alert('Error connecting to wallet.');
+    }
+});
+
+var hapy=0;
+var sady=0;
+
+function
+sad()
+{
+	sady=sady+1;
+}
+
+happy()
+{
+	hapy=hapy+1;
+}
+
+</script>
+</html>

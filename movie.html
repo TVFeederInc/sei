@@ -1,0 +1,41 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Movie Magic</title>
+	<style>
+	body{display:inline;}
+	iframe{width:98vw;height:98vh;}
+	</style>
+</head>
+<body>
+
+<iframe id="myFrame" src="" frameborder="0" allowfullscreen></iframe>
+<button onclick="supras()">
+</button>
+</body>
+<script>
+
+window.onload=function()
+{
+	setTimeout(supra, 1);
+}
+
+function
+supra()
+{
+	var newSrc = "https://player.vimeo.com/video/862891870?autoplay=1";
+	var iframe = document.getElementById("myFrame");
+	iframe.src = newSrc;
+}
+
+function
+supras()
+{
+	var newSrc = "https://player.vimeo.com/video/862891802?autoplay=1";
+	var iframe = document.getElementById("myFrame");
+	iframe.src = newSrc;
+}
+
+</script>
+</html>
